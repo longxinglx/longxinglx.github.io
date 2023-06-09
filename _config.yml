@@ -97,12 +97,12 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: longxinglx/longxinglx.github.io # <gh-username>/<repo>
-    repo_id: R_kgDOJtOOpA
-    category: Announcements
-    category_id: DIC_kwDOJtOOpM4CXFB_
-    mapping: pathname # optional, default to 'pathname'
-    input_position: top # optional, default to 'bottom'
+    repo: 'longxinglx/longxinglx.github.io' # <gh-username>/<repo>
+    repo_id: 'R_kgDOJtOOpA'
+    category: 'Announcements'
+    category_id: 'DIC_kwDOJtOOpM4CXFB_'
+    mapping: 'pathname' # optional, default to 'pathname'
+    input_position: 'top' # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: 1 # optional, default to the value of `1`
 
