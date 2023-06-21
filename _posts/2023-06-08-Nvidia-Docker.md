@@ -1,7 +1,7 @@
 ---
 title: Nvidia-Docker 教程
 date: 2023-06-08 20:00:00 +0800
-categories: [ENV]
+categories: [环境配置]
 tags: [docker]   # TAG names should always be lowercase
 math: true              # enable Mathematics 
 mermaid: true           # enable Mermaid
