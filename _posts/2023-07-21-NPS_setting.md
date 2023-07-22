@@ -61,9 +61,9 @@ docker logs nps
 
 * 点击**客户端** -> **新增**
 
-  ![nps客户端](./assets/nps%E5%AE%A2%E6%88%B7%E7%AB%AF.png){: style="zoom: 33%;"}
+  ![nps客户端](./assets/nps%E5%AE%A2%E6%88%B7%E7%AB%AF.png){: style="zoom:50%;"}
 
-  ![nps客户端2](./assets/nps%E5%AE%A2%E6%88%B7%E7%AB%AF2.png){: style="zoom: 33%;"}
+  ![nps客户端2](./assets/nps%E5%AE%A2%E6%88%B7%E7%AB%AF2.png){: style="zoom: 50%;"}
 
 * 添加成功后查看**客户端列表**, 复制`-server` 和 `-vkey`.
 
@@ -99,4 +99,4 @@ docker logs npc
 
 * 下面这个例子中, 我为 jupyter 使用的端口添加了一个 TCP 隧道:
 
-![Jupyter-tunnel](./assets/Jupyter-tunnel.png){: style="zoom: 33%;"}
+![Jupyter-tunnel](./assets/Jupyter-tunnel.png){: style="zoom: 50%;"}
