@@ -30,4 +30,4 @@ Your contribution is very much appreciated!
 
 ## License
 
-This work is published under [MIT][mit] License.
+This work is published under [MIT](https://github.com/longxinglx/longxinglx.github.io/blob/master/LICENSE) License.
