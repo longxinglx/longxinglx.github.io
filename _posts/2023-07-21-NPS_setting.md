@@ -2,7 +2,7 @@
 title: 服务器内网穿透--NPS设置
 date: 2023-07-21 21:00:00 +0800
 categories: [服务器相关]
-tags: [NPS]   # TAG names should always be lowercase
+tags: [nps]   # TAG names should always be lowercase
 pin: false               # Pinned Posts
 img_path: /assets/posts_assets/2023-07-21-NPS_setting/
 ---
