@@ -124,7 +124,7 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py38
 ```shell
 # 进入dockerfile所在文件目录 (最好为dockerfile创建一个空文件夹, 否则docker会扫描dockerfile所在文件夹所有文件)
 # 创建镜像
-docker build -t contaicontainer_name:1.0
+docker build -t contaicontainer_name:1.0 .
 
 # 查看镜像
 docker images
