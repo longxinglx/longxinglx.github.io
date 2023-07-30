@@ -104,7 +104,7 @@ vim dockerfile
 
 ```dockerfile
 FROM nvidia/cuda:12.1.0-base-ubuntu22.04
-LABEL version="1.0" maintainer="xinglong1116@foxmail.com" Description="basic cuda conda environment"
+LABEL version="1.0" maintainer="Long Xing" Description="basic cuda conda environment"
 # 这里用于解决 GPG error 问题, 详见下面补充
 RUN apt-key del "7fa2af80" \
 && export this_distro="$(cat /etc/os-release | grep '^ID=' | awk -F'=' '{print $2}')" \
@@ -178,5 +178,5 @@ docker images
 W: GPG error: https://developer.download.nvidia.cn/compute/cuda/repos/ubuntu1804/x86_64  InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A4B469963BF863CC
 ```
 
-**解决方法详见:**[Cuda Repo Signing Key Change is causing package repo update failures (#158) · Issues · nvidia / container-images / cuda · GitLab](https://gitlab.com/nvidia/container-images/cuda/-/issues/158)
+**解决方法详见:** [Cuda Repo Signing Key Change is causing package repo update failures (#158) · Issues · nvidia / container-images / cuda · GitLab](https://gitlab.com/nvidia/container-images/cuda/-/issues/158)
 
