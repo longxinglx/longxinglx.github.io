@@ -83,7 +83,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 关键权限升级
+  contents: write 
   pages: write
   id-token: write
 
