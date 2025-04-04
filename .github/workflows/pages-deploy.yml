@@ -58,6 +58,13 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
+      
+      - name: Ensure upload-artifact is available
+        uses: actions/upload-artifact@v3
+        with:
+          name: dummy
+          path: README.md
+          retention-days: 1
 
   deploy:
     environment:
