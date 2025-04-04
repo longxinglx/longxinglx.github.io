@@ -75,7 +75,6 @@ on:
   push:
     branches:
       - main
-      - master
     paths-ignore:
       - .gitignore
       - README.md
@@ -83,7 +82,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write  # 关键权限升级
   pages: write
   id-token: write
 
@@ -93,14 +92,16 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04  # 关键修改：使用经过充分验证的旧版运行器
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # 禁用凭证缓存
 
-      - name: Setup Pages
-        id: pages
+      - name: Validate Pages
         uses: actions/configure-pages@v4
+        id: pages
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -110,25 +111,27 @@ jobs:
 
       - name: Build site
         run: |
-          mkdir -p "_site${{ steps.pages.outputs.base_path }}"
-          bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" --trace
+          rm -rf _site  # 确保干净构建
+          bundle exec jekyll b -d "_site" --trace
         env:
           JEKYLL_ENV: "production"
 
-      - name: Validate build
+      - name: Verify Output
         run: |
-          [ -d "_site${{ steps.pages.outputs.base_path }}" ] || (echo "Build failed"; exit 1)
+          [ "$(ls -A _site)" ] || (echo "构建产物为空"; exit 1)
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # 升级到最新稳定版
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04  # 保持运行环境一致性
+    runs-on: ubuntu-22.04
     needs: build
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v3  # 使用最新部署组件
+        uses: actions/deploy-pages@v3
